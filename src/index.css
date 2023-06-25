@@ -1,0 +1,210 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    @keyframes animloader {
+        0% {
+            border-color: white rgba(255, 255, 255, 0) rgba(255, 255, 255, 0) rgba(255, 255, 255, 0);
+        }
+
+        33% {
+            border-color: white white rgba(255, 255, 255, 0) rgba(255, 255, 255, 0);
+        }
+
+        66% {
+            border-color: white white white rgba(255, 255, 255, 0);
+        }
+
+        100% {
+            border-color: white white white white;
+        }
+    }
+
+    @font-face {
+        font-family: openSans;
+        src: url(/public/assets/fonts/OpenSans-Regular.ttf);
+    }
+
+    @font-face {
+        font-family: openSansCon;
+        src: url(/public/assets/fonts/fa-brands-400.woff2);
+    }
+
+    @font-face {
+        font-family: PlayfairDisplay;
+        src: url(/public/assets/fonts/PlayfairDisplay-SemiBold.ttf);
+    }
+
+    *{
+        padding: 0;
+        margin: 0;
+       
+    }
+
+    .PlayfairDisplay{
+        font-family: PlayfairDisplay;
+    }
+
+    .openSansCon{
+        font-family: openSansCon;
+    }
+
+    .OpenSans {
+        font-family: openSans;
+    }
+
+    .activePc {
+        color: #347ABC;
+        border-bottom: 2px solid #347ABC;
+
+    }
+
+    .navbar {
+        position: relative;
+        background: transparent;
+        padding-bottom: 5px;
+
+    }
+
+    .navbar:hover {
+        color: #347ABC;
+        transition: 0.3s ease-in-out;
+
+    }
+
+
+    .navbar::before {
+        content: '';
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        height: 1.5px;
+        width: 100%;
+        background-color: #347ABC;
+        transform: scaleX(0);
+        transition: all 0.3s ease;
+    }
+
+    .navbar:hover::before {
+        transform: scaleX(1);
+    }
+
+    .activeMobile {
+        color: #347ABC;
+        border: none;
+    }
+
+    .navbarMobile {
+        display: block;
+        border-top: 2px solid #dadada;
+        padding: 15px 30px;
+    }
+
+    .loader {
+        border: 1px solid white;
+        border-radius: 50%;
+        width: 24px;
+        height: 24px;
+        animation: animloader 1s linear;
+        z-index: 50;
+    }
+
+    .footerListStyle {
+        list-style: "> ";
+    }
+
+    .flex50 {
+        flex: 50%;
+    }
+
+    .flex100 {
+        flex: 100%;
+    }
+    .check {
+        cursor: pointer;
+        position: relative;
+        margin: auto;
+        width: 18px;
+        height: 18px;
+        -webkit-tap-highlight-color: transparent;
+        transform: translate3d(0, 0, 0);
+    }
+
+    .check:before {
+        content: "";
+        position: absolute;
+        top: -15px;
+        left: -15px;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: rgba(34, 50, 84, 0.03);
+        opacity: 0;
+        transition: opacity 0.2s ease;
+    }
+
+    .check svg {
+        position: relative;
+        z-index: 1;
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke: #c8ccd4;
+        stroke-width: 1.5;
+        transform: translate3d(0, 0, 0);
+        transition: all 0.2s ease;
+    }
+
+    .check svg path {
+        stroke-dasharray: 60;
+        stroke-dashoffset: 0;
+    }
+
+    .check svg polyline {
+        stroke-dasharray: 22;
+        stroke-dashoffset: 66;
+    }
+
+    .check:hover:before {
+        opacity: 1;
+    }
+
+    .check:hover svg {
+        stroke: #4285f4;
+    }
+
+    #cbx:checked+.check svg {
+        stroke: #4285f4;
+    }
+
+    #cbx:checked+.check svg path {
+        stroke-dashoffset: 60;
+        transition: all 0.3s linear;
+    }
+
+    #cbx:checked+.check svg polyline {
+        stroke-dashoffset: 42;
+        transition: all 0.2s linear;
+        transition-delay: 0.15s;
+    }
+
+
+
+
+}
+
+@layer components {
+    .TRADENEERS_ICON_HOME {
+        @apply w-full h-auto z-0 absolute lg:top-[-250px] md:top-[-150px] sm:top-[-170px] top-[-100px] right-0 transition-all duration-1000
+    }
+
+    .TRADENEERS_LOGO_WHITE {
+        @apply max-w-[55%] max-h-[25%] z-50 absolute lg:top-[42%] md:top-[50%] top-[38%] m-auto right-0 delay-500 transition-all duration-700
+    }
+    
+    .DataProtectiontiltle{
+        @apply text-[30px] text-[#18395E] font-bold
+    }
+
+}
